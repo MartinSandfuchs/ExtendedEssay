@@ -162,7 +162,8 @@ void Camera::renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3
 	const uchar *const texStart = tex.bits();
 	uchar *const frameStart = frame->bits();
 	uchar *curPixel;
-	int pixelSize = tex.bytesPerLine() / tex.width();
+	int pixelSizeTex = tex.bytesPerLine() / tex.width();
+	int pixelSizeFrame = frame->bytesPerLine() / frame->width();
 
 
 	//Iterate through the triangle and calculate z-values and texture coordinates
@@ -180,7 +181,7 @@ void Camera::renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3
 		if (xMin < 0) xMin = 0;
 
 		float px = (xMin - midX) * dx;
-		curPixel = frameStart + pixelSize * (pixelX * y + xMin); //Set the pointer to the current pixel
+		curPixel = frameStart + pixelSizeFrame * (pixelX * y + xMin); //Set the pointer to the current pixel
 
 		//Extracted helper variables
 		const float BtYpCtZ = B * py + C * pz;
@@ -202,9 +203,9 @@ void Camera::renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3
 				                          clamp(textureHeight - textureHeight * texCoord.y, textureHeight - 1));
 
 				//Copy the pixel from the texture to the frame buffer
-				memcpy(curPixel, texStart + pixelSize * (pixelCoord.y*textureWidth + pixelCoord.x), pixelSize);
+				memcpy(curPixel, texStart + pixelSizeTex * (pixelCoord.y * textureWidth + pixelCoord.x), pixelSizeTex);
 			}
-			curPixel += pixelSize; //Iterate to the next pixel
+			curPixel += pixelSizeFrame; //Iterate to the next pixel
 		}
 		py += dy;
 	}
