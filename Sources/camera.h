@@ -15,7 +15,7 @@ using namespace std;
 class Camera {
  public:
 	//Constructor/Destructor
-	Camera(const int width, const int height);
+	Camera(const int &width, const int &height);
 	~Camera();
 
 	//Functions
