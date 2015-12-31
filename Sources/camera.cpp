@@ -1,7 +1,7 @@
 #include "camera.h"
 
 //Constructor/Destructor
-Camera::Camera(const int width, const int height) {
+Camera::Camera(const int &width, const int &height) {
 	eyePos = Vector3f(0, 0, 5);
 	cz = -1 * eyePos;
 	cz.normalize();
