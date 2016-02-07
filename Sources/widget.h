@@ -56,6 +56,7 @@ private:
 
     string winPath = "D:/QtProjects/TextureMapping/Resources";
     string macPath = "/Users/martinsandfuchs/Desktop/TextureMapping/Resources";
+    string linPath = "/run/media/martinsandfuchs/Data/QtProjects/TextureMapping/Resources";
     string path = "../Resources";
 
 private slots:
