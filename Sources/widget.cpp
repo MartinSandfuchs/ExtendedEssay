@@ -18,8 +18,10 @@ Widget::Widget(QWidget *parent) :
     //Get the path to the meshes
 #ifdef __APPLE__
     path = macPath;
-#else
+#elif defined _WIN32
     path = winPath;
+#elif defined __linux__
+    path = linPath;
 #endif
 
     //Setup all the meshes
