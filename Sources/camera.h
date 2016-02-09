@@ -1,10 +1,10 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <QPainter>
-#include <cmath>
 #include <vector>
-#include <QImage>
+#include <QtGui/QPainter>
+#include <cmath>
+#include <QtGui/QImage>
 
 #include "vector3d.h"
 #include "vertex.h"
@@ -15,7 +15,7 @@ using namespace std;
 class Camera {
  public:
 	//Constructor/Destructor
-	Camera(const int &width, const int &height);
+    Camera(const int &width, const int &height);
 	~Camera();
 
 	//Functions
@@ -29,7 +29,7 @@ class Camera {
 	void move(const Vector3f& direction);
 
 	void render();
-  void renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3, const QImage &tex);
+    void renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3, const QImage &tex);
 
 	void rotate(const Vector3f &axis, const float &radians);
 	void rotate(const Vector3f &axis, const float &radians, const Vector3f &point);
@@ -72,7 +72,7 @@ class Camera {
 	int pixelX;
 	int pixelY;
 
-	vector<Mesh*> meshes;
+	std::vector<Mesh*> meshes;
 };
 
 #endif // CAMERA_H
