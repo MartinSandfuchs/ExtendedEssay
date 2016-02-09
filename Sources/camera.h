@@ -2,9 +2,9 @@
 #define CAMERA_H
 
 #include <vector>
-#include <QtGui/QPainter>
+#include <QPainter>
 #include <cmath>
-#include <QtGui/QImage>
+#include <QImage>
 
 #include "vector3d.h"
 #include "vertex.h"
