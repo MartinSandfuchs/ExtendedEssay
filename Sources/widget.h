@@ -1,15 +1,15 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
-#include <QtWidgets/QWidget>
-#include <QtGui/QPainter>
-#include <QtGui/QMouseEvent>
+#include <QWidget>
+#include <QPainter>
+#include <QMouseEvent>
 #include <vector>
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <time.h>
 #include <QElapsedTimer>
 #include <cmath>
-#include <QtCore/QThread>
+#include <QThread>
 
 #include "camera.h"
 #include "vector3d.h"
