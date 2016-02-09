@@ -2,8 +2,8 @@
 #define MESH_H
 
 #include <fstream>
-#include <QtCore/QString>
-#include <QtGui/QImage>
+#include <QString>
+#include <QImage>
 #include <string>
 #include <vector>
 #include <iostream>
