@@ -5,13 +5,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 #set everything up for the import of Qt libraries
 set(CMAKE_AUTOMOC ON)
-#set(CMAKE_PREFIX_PATH D:/Qt/Qt5.5.1/MinGW/5.5/mingw492_32)
-set(CMAKE_PREFIX_PATH "D:/Qt/Qt5.5.1/5.5/mingw492_32")
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.5.1/5.5/gcc_64)
 
 #Create the binary in a subfolder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
-set(SOURCE_FILES main.cpp)
+#set(SOURCE_FILES main.cpp)
 file(GLOB SRCS *.cpp *.h)
 
 #import Qt libraries
