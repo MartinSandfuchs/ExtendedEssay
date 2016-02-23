@@ -14,10 +14,10 @@ class Matrix3x3 {
 public:
     Matrix3x3();
 
-    Matrix3x3 makeObjectToWorld(const Vector3f &xaxis, const Vector3f &yaxis, const Vector3f &zaxis);
-    Matrix3x3 makeRotation(Vector3f axis, const float &angle);
-    Matrix3x3 makeScale(const float &a, const float &b, const float &c);
-    Matrix3x3 makeWorldToObject(const Vector3f &xaxis, const Vector3f &yaxis, const Vector3f &zaxis);
+    static Matrix3x3 makeObjectToWorld(const Vector3f &xaxis, const Vector3f &yaxis, const Vector3f &zaxis);
+    static Matrix3x3 makeRotation(Vector3f axis, const float &angle);
+    static Matrix3x3 makeScale(const float &a, const float &b, const float &c);
+    static Matrix3x3 makeWorldToObject(const Vector3f &xaxis, const Vector3f &yaxis, const Vector3f &zaxis);
 
     Matrix3x3 operator*(const float &s) const;
 
