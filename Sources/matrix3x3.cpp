@@ -8,10 +8,11 @@ Matrix3x3::Matrix3x3() {
 }
 
 Matrix3x3 Matrix3x3::makeObjectToWorld(const Vector3f &xaxis, const Vector3f &yaxis, const Vector3f &zaxis) {
-	fields.at(0).at(0) = xaxis.x; fields.at(0).at(1) = yaxis.x; fields.at(0).at(2) = zaxis.x;
-	fields.at(1).at(0) = xaxis.y; fields.at(1).at(1) = yaxis.y; fields.at(1).at(2) = zaxis.y;
-	fields.at(2).at(0) = xaxis.z; fields.at(2).at(1) = yaxis.z; fields.at(2).at(2) = zaxis.z;
-	return *this;
+	Matrix3x3 result;
+	result.fields.at(0).at(0) = xaxis.x; result.fields.at(0).at(1) = yaxis.x; result.fields.at(0).at(2) = zaxis.x;
+	result.fields.at(1).at(0) = xaxis.y; result.fields.at(1).at(1) = yaxis.y; result.fields.at(1).at(2) = zaxis.y;
+	result.fields.at(2).at(0) = xaxis.z; result.fields.at(2).at(1) = yaxis.z; result.fields.at(2).at(2) = zaxis.z;
+	return result;
 }
 
 Matrix3x3 Matrix3x3::makeRotation(Vector3f axis, const float &angle) {
@@ -21,36 +22,39 @@ Matrix3x3 Matrix3x3::makeRotation(Vector3f axis, const float &angle) {
 	const float cosPhi = cosf(angle);
 	const float sinPhi = sinf(angle);
 	const float oneMinCos = 1 - cosPhi;
+	Matrix3x3 result;
 
-	fields.at(0).at(0) = cosPhi + axis.x * axis.x * oneMinCos;
-	fields.at(0).at(1) = axis.x * axis.y * oneMinCos - axis.z * sinPhi;
-	fields.at(0).at(2) = axis.x * axis.z * oneMinCos + axis.y * sinPhi;
+	result.fields.at(0).at(0) = cosPhi + axis.x * axis.x * oneMinCos;
+	result.fields.at(0).at(1) = axis.x * axis.y * oneMinCos - axis.z * sinPhi;
+	result.fields.at(0).at(2) = axis.x * axis.z * oneMinCos + axis.y * sinPhi;
 
-	fields.at(1).at(0) = axis.y * axis.x * oneMinCos + axis.z * sinPhi;
-	fields.at(1).at(1) = cosPhi + axis.y * axis.y * oneMinCos;
-	fields.at(1).at(2) = axis.y * axis.z * oneMinCos - axis.x * sinPhi;
+	result.fields.at(1).at(0) = axis.y * axis.x * oneMinCos + axis.z * sinPhi;
+	result.fields.at(1).at(1) = cosPhi + axis.y * axis.y * oneMinCos;
+	result.fields.at(1).at(2) = axis.y * axis.z * oneMinCos - axis.x * sinPhi;
 
-	fields.at(2).at(0) = axis.z * axis.x * oneMinCos - axis.y * sinPhi;
-	fields.at(2).at(1) = axis.z * axis.y * oneMinCos + axis.x * sinPhi;
-	fields.at(2).at(2) = cosPhi + axis.z * axis.z * oneMinCos;
-	return *this;
+	result.fields.at(2).at(0) = axis.z * axis.x * oneMinCos - axis.y * sinPhi;
+	result.fields.at(2).at(1) = axis.z * axis.y * oneMinCos + axis.x * sinPhi;
+	result.fields.at(2).at(2) = cosPhi + axis.z * axis.z * oneMinCos;
+	return result;
 }
 
 Matrix3x3 Matrix3x3::makeScale(const float &a, const float &b, const float &c) {
-	fields.resize(3);
+	Matrix3x3 result;
+	/*fields.resize(3);
 	for (unsigned int i = 0; i < 3; ++i) {
 		fields.at(i).resize(3,0);
-	}
-	fields.at(0).at(0) = a;
-	fields.at(1).at(1) = b;
-	fields.at(2).at(2) = c;
-	return *this;
+	}*/
+	result.fields.at(0).at(0) = a;
+	result.fields.at(1).at(1) = b;
+	result.fields.at(2).at(2) = c;
+	return result;
 }
 Matrix3x3 Matrix3x3::makeWorldToObject(const Vector3f &xaxis, const Vector3f &yaxis, const Vector3f &zaxis) {
-	fields.at(0).at(0) = xaxis.x; fields.at(0).at(1) = xaxis.y; fields.at(0).at(2) = xaxis.z;
-	fields.at(1).at(0) = yaxis.x; fields.at(1).at(1) = yaxis.y; fields.at(1).at(2) = yaxis.z;
-	fields.at(2).at(0) = zaxis.x; fields.at(2).at(1) = zaxis.y; fields.at(2).at(2) = zaxis.z;
-	return *this;
+	Matrix3x3 result;
+	result.fields.at(0).at(0) = xaxis.x; result.fields.at(0).at(1) = xaxis.y; result.fields.at(0).at(2) = xaxis.z;
+	result.fields.at(1).at(0) = yaxis.x; result.fields.at(1).at(1) = yaxis.y; result.fields.at(1).at(2) = yaxis.z;
+	result.fields.at(2).at(0) = zaxis.x; result.fields.at(2).at(1) = zaxis.y; result.fields.at(2).at(2) = zaxis.z;
+	return result;
 }
 
 Matrix3x3 Matrix3x3::operator*(const float &s) const {
