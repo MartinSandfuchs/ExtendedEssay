@@ -4,7 +4,7 @@
 Mesh::Mesh() {
 }
 
-Mesh::Mesh(const string &path) {
+Mesh::Mesh(const std::string &path) {
     loadObj(path);
 }
 
@@ -57,12 +57,12 @@ void Mesh::flipUVs() {
     }
 }
 
-void Mesh::loadObj(const string &path) {
-    string meshpath = path + "/Mesh.obj";
+void Mesh::loadObj(const std::string &path) {
+    std::string meshpath = path + "/Mesh.obj";
     ifstream file(meshpath);
     tex = QImage(QString::fromStdString(path + "/tex.png"));
     tex = tex.convertToFormat(QImage::Format_RGB32);
-    string s;
+    std::string s;
     file >> s;
     if (!file.is_open()) {
         cout << "Could not open File!" << endl;
@@ -101,8 +101,8 @@ void Mesh::loadObj(const string &path) {
             vector<unsigned int> coordIndices;
             for (unsigned int i = 0; i < 3; ++i) {
                 file >> s;
-                string positionIndex;
-                string coordIndex;
+                std::string positionIndex;
+                std::string coordIndex;
                 for (unsigned int j = 0; j < s.size(); ++j) {
                     if (s.at(j)=='/') {
                         for (unsigned int k = j + 1; k < s.size(); ++k) {
@@ -147,15 +147,15 @@ void Mesh::moveRelative(const Vector3f &direction) {
     moveMesh(globalDir);
 }
 void Mesh::rotateMesh(const Vector3f &axis, const float &radians) {
-    const Matrix3x3 rotMat = Matrix3x3().makeRotation(axis, radians);
+    const Matrix3x3 rotMat = Matrix3x3::makeRotation(axis, radians);
     applyTransformation(rotMat);
 }
 void Mesh::rotateRelative(const Vector3f &axis, const float &radians) {
     const Vector3f position = this->origin;
     moveMesh(-1*position);
-    const Matrix3x3 m = Matrix3x3().makeObjectToWorld(xaxis, yaxis, zaxis);
+    const Matrix3x3 m = Matrix3x3::makeObjectToWorld(xaxis, yaxis, zaxis);
     const Vector3f globalAxis = m*axis;
-    const Matrix3x3 rotMat = Matrix3x3().makeRotation(globalAxis, radians);
+    const Matrix3x3 rotMat = Matrix3x3::makeRotation(globalAxis, radians);
     applyTransformation(rotMat);
     moveMesh(position);
 }
@@ -167,9 +167,9 @@ void Mesh::scaleMesh(const float &factorX, const float &factorY, const float &fa
 }
 
 void Mesh::scaleRelative(const float &factorX, const float &factorY, const float &factorZ) {
-    const Matrix3x3 m1 = Matrix3x3().makeWorldToObject(xaxis, yaxis, zaxis);
-    const Matrix3x3 m2 = Matrix3x3().makeScale(factorX, factorY, factorZ);
-    const Matrix3x3 m3 = Matrix3x3().makeObjectToWorld(xaxis, yaxis, zaxis);
+    const Matrix3x3 m1 = Matrix3x3::makeWorldToObject(xaxis, yaxis, zaxis);
+    const Matrix3x3 m2 = Matrix3x3::makeScale(factorX, factorY, factorZ);
+    const Matrix3x3 m3 = Matrix3x3::makeObjectToWorld(xaxis, yaxis, zaxis);
     const Matrix3x3 totalTransform = m3*m2*m1;
     for (unsigned int i = 0; i < vertices.size(); ++i) {
         const Vector3f op = vertices.at(i) - this->origin;
