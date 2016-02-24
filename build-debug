@@ -1,0 +1,4 @@
+cd Sources
+mkdir -p CMake-build
+cd CMake-build
+cmake -DCMAKE_BUILD_TYPE=Debug "$(dirname "$pwd")". && make && cd .. && bin/TextureMapping
