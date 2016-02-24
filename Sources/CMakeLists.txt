@@ -4,9 +4,9 @@ project(TextureMapping)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 #set everything up for the import of Qt libraries
+set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.5.1/5.5/gcc_64)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
-set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.5.1/5.5/gcc_64)
 
 #Create the binary in a subfolder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
@@ -21,6 +21,7 @@ find_package(Qt5Core REQUIRED)
 
 #include Qt headers
 include_directories(${Qt5Widgets_INCLUDES})
+include_directories("CMake-build")
 
 add_executable(TextureMapping ${SRCS})
 
