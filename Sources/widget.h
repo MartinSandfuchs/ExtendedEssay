@@ -54,6 +54,7 @@ private:
 
     QTimer timer;
 
+    //Change these paths depending on the OS and where the repository was cloned to
     string winPath = "D:/QtProjects/TextureMapping/Resources";
     string macPath = "/Users/martinsandfuchs/Desktop/TextureMapping/Resources";
     string linPath = "/run/media/martinsandfuchs/Data/QtProjects/TextureMapping/Resources";
