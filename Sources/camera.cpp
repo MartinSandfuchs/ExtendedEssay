@@ -162,8 +162,8 @@ void Camera::renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3
 	const uchar *const texStart = tex.bits();
 	uchar *const frameStart = frame->bits();
 	uchar *curPixel;
-    const int pixelSizeTex = tex.bytesPerLine() / tex.width();
-    const int pixelSizeFrame = frame->bytesPerLine() / frame->width();
+	const int pixelSizeTex = tex.bytesPerLine() / tex.width();
+	const int pixelSizeFrame = frame->bytesPerLine() / frame->width();
 
 
 	//Iterate through the triangle and calculate z-values and texture coordinates
