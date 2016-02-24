@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 project(TextureMapping)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 #set everything up for the import of Qt libraries
 #set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.5.1/5.5/gcc_64)
