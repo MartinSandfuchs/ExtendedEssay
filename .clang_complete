@@ -2,6 +2,7 @@
 -I/Users/martinsandfuchs/Qt5.5.1/5.5/android_armv7/include/QtWidgets
 -I/Users/martinsandfuchs/Qt5.5.1/5.5/android_armv7/include/QtCore
 -I/Users/martinsandfuchs/Qt5.5.1/5.5/android_armv7/include/QtGui
+-I/users/martinsandfuchs/Downloads/ExtendedEssay/Sources/CMake-build
 
 -I/home/martinsandfuchs/Qt5.5.1/5.5/gcc_64/include
 -I/home/martinsandfuchs/Qt5.5.1/5.5/gcc_64/include/QtWidgets

@@ -4,8 +4,8 @@
 //Constructor duh!
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
-    cam(width(), height()),
-    ui(new Ui::Widget) {
+    ui(new Ui::Widget),
+    cam(width(), height()) {
     ui->setupUi(this);
     connect(&timer, SIGNAL(timeout()), this, SLOT(updateScene()));
     timer.start(20);
