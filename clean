@@ -1,0 +1,3 @@
+cd Sources
+rm -r bin
+rm -r CMake-build
