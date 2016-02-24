@@ -41,9 +41,9 @@ Matrix3x3 Matrix3x3::makeRotation(Vector3f axis, const float &angle) {
 Matrix3x3 Matrix3x3::makeScale(const float &a, const float &b, const float &c) {
 	Matrix3x3 result;
 	/*fields.resize(3);
-	for (unsigned int i = 0; i < 3; ++i) {
-		fields.at(i).resize(3,0);
-	}*/
+	   for (unsigned int i = 0; i < 3; ++i) {
+	        fields.at(i).resize(3,0);
+	   }*/
 	result.fields.at(0).at(0) = a;
 	result.fields.at(1).at(1) = b;
 	result.fields.at(2).at(2) = c;
