@@ -48,6 +48,7 @@ Temporary Items
 
 # Build directories created by running the build script
 Sources/bin
+Sources/build
 Sources/CMake-build
 # Local files of the Qt project (created by Qt Creator)
 Sources/TextureMapping.pro.user

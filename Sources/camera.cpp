@@ -232,7 +232,8 @@ void Camera::rotate(const Matrix3x3 &m, const bool &rotateEye) {
 	cz = m * cz;
 	cy = m * cy;
 	cx = crossP(cz, cy);
-	if (rotateEye) eyePos = m * eyePos;
+	if (rotateEye)
+		eyePos = m * eyePos;
 }
 
 Vector3f Camera::toCameraSpace(const Vector3f &point) const {
