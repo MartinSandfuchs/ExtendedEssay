@@ -72,7 +72,7 @@ class Camera {
 	int pixelX;
 	int pixelY;
 
-	std::vector<Mesh * > meshes;
+	std::vector<const Mesh *> meshes;
 };
 
 #endif // CAMERA_H
