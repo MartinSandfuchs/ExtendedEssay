@@ -28,4 +28,8 @@ include_directories("CMake-build")
 add_executable(TextureMapping ${SRCS})
 
 #use the required modules
-qt5_use_modules(TextureMapping Widgets Core Gui)
+#qt5_use_modules(TextureMapping Widgets Core Gui)
+
+target_link_libraries(TextureMapping Qt5::Widgets)
+target_link_libraries(TextureMapping Qt5::Core)
+target_link_libraries(TextureMapping Qt5::Gui)
