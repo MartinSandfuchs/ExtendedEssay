@@ -9,8 +9,8 @@ class Matrix3x3;
 
 class Vector3f {
 public:
-    explicit Vector3f(const float& x = 0, const float& y = 0, const float& z = 0);
-    Vector3f(const Vector3f& vec);
+    explicit Vector3f(const float &x = 0, const float &y = 0, const float &z = 0);
+    Vector3f(const Vector3f &vec);
     ~Vector3f();
 
     Vector3f crossP(const Vector3f &vec) const;
@@ -21,13 +21,13 @@ public:
     //Operators
     Vector3f operator+(const Vector3f &vec) const;
     Vector3f operator-(const Vector3f &vec) const;
-    Vector3f& operator+=(const Vector3f &vec);
-    Vector3f &operator*=(const float& scalar);
-    Vector3f &operator/=(const float& scalar);
+    Vector3f &operator+=(const Vector3f &vec);
+    Vector3f &operator*=(const float &scalar);
+    Vector3f &operator/=(const float &scalar);
     Vector3f operator*(const float &val) const;
-    Vector3f& operator=(const Vector3f&vec);
-    bool operator ==(const Vector3f& vec) const;
-    bool operator !=(const Vector3f& vec) const;
+    Vector3f &operator=(const Vector3f &vec);
+    bool operator==(const Vector3f &vec) const;
+    bool operator!=(const Vector3f &vec) const;
 
     void rotate(const Vector3f &axis, const float &radians);
     inline float scalarP(const Vector3f &vec) const;
