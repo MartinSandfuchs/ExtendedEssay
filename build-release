@@ -1,4 +1,4 @@
 cd Sources
-mkdir -p CMake-build
-cd CMake-build
+mkdir -p build
+cd build
 cmake -DCMAKE_BUILD_TYPE=Release "$(dirname "$pwd")". && make && cd .. && bin/TextureMapping
