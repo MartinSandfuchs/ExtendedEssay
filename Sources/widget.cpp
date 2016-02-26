@@ -201,7 +201,7 @@ void Widget::updateScene() {
     //Apply transformation to meshes for animation
     //mesh1.rotateMesh(YAXIS, +0.05f);
     //mesh.rotateRelative(XAXIS, +0.01f);
-    update();
+    this->update();
 }
 
 //There is some UI as well!
