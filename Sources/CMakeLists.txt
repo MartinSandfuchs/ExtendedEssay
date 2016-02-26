@@ -4,8 +4,12 @@ project(TextureMapping)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 #set everything up for the import of Qt libraries
-#set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.5.1/5.5/gcc_64)
+if (APPLE)
 set(CMAKE_PREFIX_PATH /Users/martinsandfuchs/Qt5.5.1/5.5/clang_64)
+else (APPLE)
+set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.5.1/5.5/gcc_64)
+endif (APPLE)
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 

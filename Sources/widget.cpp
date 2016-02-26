@@ -25,8 +25,8 @@ Widget::Widget(QWidget *parent) :
 #endif
 
     //Setup all the meshes
-    mesh1.loadObj (path + "/Mesh1");
-    //mesh.loadObj(path + "/Mesh2");
+    //mesh1.loadObj (path + "/Mesh1");
+    mesh.loadObj(path + "/Mesh2");
 
     mesh1.scaleUniform(0.004f);
     mesh1.moveMesh(Vector3f(0.3f, -0.9f, 0));
