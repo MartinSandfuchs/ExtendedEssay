@@ -50,5 +50,10 @@ Temporary Items
 Sources/bin
 Sources/build
 Sources/CMake-build
+
+# Config files
+.clang_complete
+.vscode
+
 # Local files of the Qt project (created by Qt Creator)
 Sources/TextureMapping.pro.user
