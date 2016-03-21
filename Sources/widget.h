@@ -57,7 +57,7 @@ class Widget: public QWidget {
 	//Change these paths depending on the OS and where the repository was cloned to
 	string winPath = "D:/QtProjects/TextureMapping/Resources";
 	string macPath = "/Users/martinsandfuchs/Downloads/ExtendedEssay/Sources/Resources";
-	string linPath = "/run/media/martinsandfuchs/Data/QtProjects/TextureMapping/Resources";
+	string linPath = "/home/martinsandfuchs/Downloads/ExtendedEssay/Sources/Resources";
 	string path = "../Resources";
 
  private slots:
