@@ -50,6 +50,9 @@ Temporary Items
 Sources/bin
 Sources/build
 Sources/CMake-build
+Sources/CMakeCache.txt
+Sources/Makefile
+Sources/cmake_install.cmake
 
 # Config files
 .clang_complete
