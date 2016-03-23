@@ -1,0 +1,6 @@
+echo starting $3 build
+
+cd Sources
+mkdir -p build
+cd build
+cmake -DCMAKE_BUILD_TYPE=$3 "$(dirname "$pwd")". && make
