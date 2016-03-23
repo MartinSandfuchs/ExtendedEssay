@@ -4,14 +4,13 @@
 #include "vector3d.h"
 #include "vector2d.h"
 
-struct Vertex
-{
+struct Vertex {
     Vector3f* p  = 0;
     //QPointF texCoord;
     Vector2f texCoord;
 };
 
-struct Triangle{
+struct Triangle {
     Vertex v1;
     Vertex v2;
     Vertex v3;
