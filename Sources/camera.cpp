@@ -200,7 +200,7 @@ void Camera::renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3
 
 				const Vector2f texCoord = v1.texCoord + ABTex * scalarS + ACTex * scalarT;
 				const Vector2i pixelCoord(clamp(textureWidth * texCoord.x, textureWidth - 1),
-				                          clamp(textureHeight - textureHeight * texCoord.y, textureHeight - 1));
+										  clamp(textureHeight - textureHeight * texCoord.y, textureHeight - 1));
 
 				//Copy the pixel from the texture to the frame buffer
 				memcpy(curPixel, texStart + pixelSizeTex * (pixelCoord.y * textureWidth + pixelCoord.x), pixelSizeTex);
