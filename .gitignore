@@ -60,3 +60,4 @@ Sources/cmake_install.cmake
 
 # Local files of the Qt project (created by Qt Creator)
 Sources/TextureMapping.pro.user
+Sources/CMakeLists.txt.user
