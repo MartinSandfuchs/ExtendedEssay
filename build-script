@@ -1,6 +1,6 @@
-echo starting $3 build
+echo starting $1 build
 
 cd Sources
 mkdir -p build
 cd build
-cmake -DCMAKE_BUILD_TYPE=$3 "$(dirname "$pwd")". && make
+cmake -DCMAKE_BUILD_TYPE=$1 "$(dirname "$pwd")". && make
