@@ -199,7 +199,7 @@ void Widget::updateScene() {
 	if (up) cam.moveRight(+0.1f);
 	if (left) cam.moveRight(-0.1f);
 	//Apply transformation to meshes for animation
-	//mesh1.rotateMesh(YAXIS, +0.05f);
+	//mesh.rotateMesh(vec3f::yaxis, +0.01f);
 	//mesh.rotateRelative(XAXIS, +0.01f);
 	this->update();
 }
