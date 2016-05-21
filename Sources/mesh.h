@@ -43,7 +43,7 @@ class Mesh {
 	void setAxes(const Vector3f &xaxis, const Vector3f &yaxis, const Vector3f &zaxis);
 	void setOrigin(const Vector3f &origin);
 	void setPosition(const Vector3f &pos);
-	
+
 	//Variables
 	vector<Vector3f> vertices;
 	vector<Triangle> Triangles;
