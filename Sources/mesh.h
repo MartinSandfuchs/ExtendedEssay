@@ -30,7 +30,7 @@ class Mesh {
 	Vector3f convertPointToObjectSpace(const Vector3f &vec) const;
 	Vector3f convertVecToObjectSpace(const Vector3f &vec) const;
 
-	void flipUVs();
+	void flipNormals();
 	void loadObj(const string &path);
 	void moveMesh(const Vector3f &direction);
 	void moveRelative(const Vector3f &direction);

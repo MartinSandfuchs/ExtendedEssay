@@ -49,7 +49,7 @@ Vector3f Mesh::convertVecToObjectSpace(const Vector3f &vec) const {
 }
 
 
-void Mesh::flipUVs() {
+void Mesh::flipNormals() {
 	for (unsigned int i = 0; i < Triangles.size(); ++i) {
 		Vertex temp = Triangles.at(i).v1;
 		Triangles.at(i).v1 = Triangles.at(i).v2;
