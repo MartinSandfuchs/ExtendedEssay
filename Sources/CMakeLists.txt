@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 if (APPLE)
 set(CMAKE_PREFIX_PATH /Users/martinsandfuchs/Qt5.5.1/5.5/clang_64)
 else (APPLE)
-set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.5.1/5.5/gcc_64)
+set(CMAKE_PREFIX_PATH /home/martinsandfuchs/Qt5.6.0/5.6/gcc_64)
 endif (APPLE)
 
 set(CMAKE_AUTOMOC ON)

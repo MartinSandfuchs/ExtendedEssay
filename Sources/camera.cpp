@@ -185,8 +185,8 @@ void Camera::renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3
 
 		//Extracted helper variables
 		const float BtYpCtZ = B * py + C * pz;
-		const float ACXtY = ACScr.x * y;
-		const float ABXtY = ABScr.x * y;
+		const float ACXtY = helpABScr + ACScr.x * y;
+		const float ABXtY = helpACScr - ABScr.x * y;
 
 		for (int x = xMin; x < xMax; ++x) {
 			px += dx;
@@ -195,8 +195,8 @@ void Camera::renderTriangle(const Vertex &v1, const Vertex &v2, const Vertex &v3
 				ZBuffer[y][x] = z;
 
 				//Calculate the texture coordinate scalars
-				const float scalarS = (ACXtY - ACScr.y * x + helpABScr) * denomScr1 * z;
-				const float scalarT = (ABScr.y * x - ABXtY + helpACScr) * denomScr2 * z;
+				const float scalarS = (ACXtY - ACScr.y * x) * denomScr1 * z;
+				const float scalarT = (ABScr.y * x + ABXtY) * denomScr2 * z;
 
 				const Vector2f texCoord = v1.texCoord + ABTex * scalarS + ACTex * scalarT;
 				const Vector2i pixelCoord(clamp(textureWidth * texCoord.x, textureWidth - 1),
