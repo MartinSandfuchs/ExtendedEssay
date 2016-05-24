@@ -283,7 +283,6 @@ void Camera::setPosition(const Vector3f &pos) {
 	eyePos = pos;
 }
 
-int Camera::clamp(const int &n, const int &max) {
-	const int x = n < 0 ? 0 : n;
-	return x > max ? max : x;
+inline int Camera::clamp(const int &n, const int &max) {
+	return n < 0 ? 0 : n > max ? max : n;
 }

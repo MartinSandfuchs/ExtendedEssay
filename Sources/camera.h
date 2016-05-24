@@ -63,7 +63,7 @@ class Camera {
 
  private:
 	void clearBuffers();
-	int clamp(const int &n, const int &max);
+	inline int clamp(const int &n, const int &max);
 
 	float distance = 1.732f;
 	float fov;
